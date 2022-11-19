@@ -12,7 +12,7 @@ const SingleProductPage = () => {
     setIsLoading(true)
     try {
       const response = await axios.get(
-        `https://store-elec-mern-api.herokuapp.com/api/v1/products/${id}`
+        `https://elekkom-server.onrender.com/api/v1/products/${id}`
       )
       const data = response.data
       setIsLoading(false)
