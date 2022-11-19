@@ -74,4 +74,4 @@ export const questions = [
 ]
 
 export const products_url =
-  'https://store-elec-mern-api.herokuapp.com/api/v1/products?page='
+  'https://elekkom-server.onrender.com/api/v1/products?page='
