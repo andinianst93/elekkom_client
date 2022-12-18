@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import Container from './Container'
+
 const Product = ({ name, price, _id: id, image }) => {
   return (
     <Container>

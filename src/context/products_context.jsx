@@ -1,18 +1,20 @@
 import React, { useContext, useReducer, useEffect } from 'react'
 import axios from 'axios'
 import reducer from '../reducers/products_reducer'
-import { products_url as url } from '../utils/constants'
 import {
   GET_PRODUCTS_BEGIN,
   GET_PRODUCTS_SUCCESS,
   GET_PRODUCTS_ERROR,
+  HANDLE_PAGE,
 } from '../actions'
-
+import { products_url as url } from '../utils/constants'
 const initialState = {
   products_loading: false,
   products_error: false,
   products: [],
   featured_products: [],
+  numOfPages: 3,
+  page: 1,
 }
 const ProductsContext = React.createContext()
 
@@ -30,12 +32,15 @@ export const ProductsProvider = ({ children }) => {
     }
   }
 
+  const handlePage = (value) => {
+    dispatch({ type: HANDLE_PAGE, payload: value })
+  }
   useEffect(() => {
-    fetchProducts(url)
-  }, [])
+    fetchProducts(`${url}${state.page}`)
+  }, [state.page])
 
   return (
-    <ProductsContext.Provider value={{ ...state }}>
+    <ProductsContext.Provider value={{ ...state, handlePage }}>
       {children}
     </ProductsContext.Provider>
   )

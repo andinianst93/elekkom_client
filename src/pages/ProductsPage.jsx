@@ -1,6 +1,12 @@
 import React from 'react'
 import { Container } from '../components'
-import { Filters, ProductList, PageHero, Sort } from '../components'
+import {
+  Filters,
+  ProductList,
+  PageHero,
+  Sort,
+  PaginationBtn,
+} from '../components'
 const ProductsPage = () => {
   return (
     <Container>
@@ -14,6 +20,7 @@ const ProductsPage = () => {
           </div>
         </div>
       </div>
+      <PaginationBtn />
     </Container>
   )
 }

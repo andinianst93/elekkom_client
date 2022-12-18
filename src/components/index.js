@@ -14,12 +14,14 @@ import CartButtons from './CartButtons'
 import Container from './Container'
 import Stars from './Stars'
 import AddToCart from './AddToCart'
+import PaginationBtn from './PaginationBtn'
 export {
   AddToCart,
   Container,
   Faq,
   Navbar,
   Footer,
+  PaginationBtn,
   Error,
   FeaturedProducts,
   Filters,
